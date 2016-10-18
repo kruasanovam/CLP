@@ -16,7 +16,7 @@ def main():
 	else:
 		y=4
 		while (y>=0):
-			print(linecache.getline(filename, line_count-y))
+			print(linecache.getline(filename, line_count-y)),
 			y-=1
 
 main()
