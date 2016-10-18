@@ -7,18 +7,21 @@ def file_len(fname):
             pass
     return i + 1
 
-def main():
-	script, filename = argv
-	line_count = file_len(filename)
+def print_last5(fname):
+	line_count = file_len(fname)
 	if (line_count==0):
 		print ("File is empty")
 	elif (line_count<=5):
-		with open(filename) as f:
+		with open(fname) as f:
 		     print f.read(),
 	else:
 		y=4
 		while (y>=0):
-			print(linecache.getline(filename, line_count-y)),
+			print(linecache.getline(fname, line_count-y)),
 			y-=1
+
+def main():
+	script, filename = argv
+	print_last5(filename)
 
 main()
