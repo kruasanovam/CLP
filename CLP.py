@@ -10,9 +10,11 @@ def file_len(fname):
 def main():
 	script, filename = argv
 	line_count = file_len(filename)
-	if (line_count<=5):
+	if (line_count==0):
+		print ("File is empty")
+	elif (line_count<=5):
 		with open(filename) as f:
-		     print f.read()
+		     print f.read(),
 	else:
 		y=4
 		while (y>=0):
