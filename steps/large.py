@@ -1,21 +1,25 @@
 from behave import *
 import os
 import filecmp
-import logging
-from collections import deque
 
 
-@given('we have a big file')
+@given('a set of specific files')
 def step_impl(context):
-	pass
+	data = []
+	for row in context.table:
+		fin=row['fin']
+		out=row['fout']
+		data.append(fout)
 
-@when('we run our CLP pr')
-def step_impl(context):
-	fname="test.txt"
-	os.system("python CLP.py %s >output.txt"%fname)
 
-@then('print only last 5 lines')
+@when('we run our CLP2')
 def step_impl(context):
-	with open('test.txt') as fin, open('outputfile', 'w') as fout:
-		fout.writelines(deque(fin, 6))
+	for row in context.table:
+		context.fin=row['fin']
+		context.fout=row['fout']
+		os.system ("python CLP.py %s >%s"% (context.fin, context.fout))
+
+@then('we will find fin matches fout')
+def step_impl(context):
+	assert (filecmp.cmp(context.fin, context.fout))
 	

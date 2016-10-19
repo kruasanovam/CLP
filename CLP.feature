@@ -1,6 +1,10 @@
 Feature: first attempt
 
-  Scenario: Large File
-     Given we have a big file
-      when we run our CLP pr
-      then print only last 5 lines
+Scenario: some scenario
+  Given a set of specific files:
+	 | fin 			| fout       |
+	 | test1.txt    | test11.txt |
+	 | test2.txt    | test22.txt |
+ When we run our CLP2
+ Then we will find fin matches fout
+
