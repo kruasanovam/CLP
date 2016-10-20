@@ -9,6 +9,6 @@ def step_impl(context):
 @then('we will find fin matches fout')
 def step_impl(context):
 	for row in context.data:
-		context.fin=row['fin']
-		context.fout=row['fout']
+		context.fin='test_data/'+row['fin']
+		context.fout='test_data/'+row['fout']
 		assert (filecmp.cmp(context.fin, context.fout))

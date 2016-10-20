@@ -12,13 +12,13 @@ def step_impl(context):
  	for row in context.data:
 		context.fin=row['fin']
 		context.fout=row['fout']
-		os.system ("python CLP.py %s >%s"% (context.fin, context.fout))
+		os.system ("python CLP.py test_data/%s >test_data/%s"% (context.fin, context.fout))
 
 @then('we will find fout matches expected')
 def step_impl(context):
 	for row in context.data:
-		context.fout=row['fout']
-		context.expected=row['expected']
+		context.fout='test_data/'+row['fout']
+		context.expected='test_data/'+row['expected']
 		assert (filecmp.cmp(context.fout, context.expected))
 
 	

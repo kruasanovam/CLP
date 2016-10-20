@@ -9,14 +9,14 @@ def step_impl(context):
 @when('we try to run our CLP2')
 def step_impl(context):
  	for row in context.data:
-		context.fin=row['fin']
+		context.fin='test_data/'+row['fin']
 		context.error = subprocess.check_output("python CLP.py %s"%context.fin, shell=True)
 
 
 @then('we will find CLP returns correct error')
 def step_impl(context):
 	for row in context.data:
-		context.fin=row['fin']
+		context.fin='test_data/'+row['fin']
 		assert (context.error=="File is empty")
 
 
