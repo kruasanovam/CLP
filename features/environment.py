@@ -3,6 +3,7 @@
 # USE: behave -D BEHAVE_DEBUG_ON_ERROR=yes     (to enable  debug-on-error)
 # USE: behave -D BEHAVE_DEBUG_ON_ERROR=no      (to disable debug-on-error)
 #
+#
 
 BEHAVE_DEBUG_ON_ERROR = False
 
