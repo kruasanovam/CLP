@@ -3,6 +3,15 @@ import linecache
 from collections import deque
 import sys
 import os
+from binaryornot.check import is_binary
+
+def file_type(fname):
+	ftype=is_binary(fname)
+	if (ftype==True):
+		sys.stdout.write ("Sorry, binary files are not supported")
+		return False
+	else:
+		return True
 
 def file_len(fname):
 	with open(fname) as f:
@@ -23,7 +32,17 @@ def print_last5(fname):
 			sys.stdout.write (''.join(deque(f, 5)))
 
 def main():
-	script, filename = argv
-	print_last5(filename)
+	try:
+		script, filename = argv
+		if (file_type(filename)):
+			print_last5(filename)
+	except ValueError:
+		sys.stdout.write ("No file specified")
+	except IOError as (errno, strerror):
+		sys.stdout.write ("I/O error({0}): {1}".format(errno, strerror))
+	except:
+		sys.stdout.write ("Unexpected error:", sys.exc_info()[0])
+		raise
+	
 
 main()

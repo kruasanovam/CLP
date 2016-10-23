@@ -1,0 +1,5 @@
+__UNICODE                           552K
+mapped file                       111.4M
+shared memory                        68K
+===========                      =======
+TOTAL                             769.1M
