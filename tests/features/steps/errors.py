@@ -2,7 +2,6 @@ from behave import *
 import os
 import subprocess
 from environment import CLP_PATH
-import sys
 
 @when('we run our CLP an expect error returned')
 def step_impl(context):
@@ -13,8 +12,7 @@ def step_impl(context):
 @when ('we try to run our CLP with no filename argument specified')
 def step_imp(context): 
 	context.error = subprocess.check_output("python %s"%CLP_PATH, shell=True, stderr=subprocess.STDOUT)
-	sys.stdout.write (context.error)
-
+	
 @then('we will find CLP returns file is empty error')
 def step_impl(context):
 	for row in context.data:

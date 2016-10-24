@@ -37,11 +37,11 @@ def main():
 		if (file_type(filename)):
 			print_last5(filename)
 	except ValueError:
-		sys.stdout.write ("No file specified")
+		sys.stderr.write ("No file specified")
 	except IOError as (errno, strerror):
-		sys.stdout.write ("I/O error({0}): {1}".format(errno, strerror))
+		sys.stderr.write ("I/O error({0}): {1}".format(errno, strerror))
 	except:
-		sys.stdout.write ("Unexpected error:", sys.exc_info()[0])
+		sys.stderr.write ("Unexpected error:", sys.exc_info()[0])
 		raise
 	
 
