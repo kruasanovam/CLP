@@ -9,3 +9,6 @@ To run the CLP simply type the following command in terminal:
 ***************************************************************
 ***                      PRE-REQUISITES                     ***
 ***************************************************************
+#run the following command to install BinaryOrNot Python package 
+(checks whether a file is binary or text)
+   pip install binaryornot

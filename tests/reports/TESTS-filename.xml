@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuite errors="0" failures="0" name="filename.File Name Validation" skipped="0" tests="3" time="0.425631"><testcase classname="filename.File Name Validation" name="CLP works for files with valid file names, even if it is: max/min long,contains allowed special chars, contains space" status="passed" time="0.209378"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @positive
+  Scenario: CLP works for files with valid file names, even if it is: max/min long,contains allowed special chars, contains space
+    Given we prepare test data for file name checks ... passed in 0.000s
+    Given a set of specific files is given ... passed in 0.000s
+      | fin                                                                                                                                                                                                                                                             | fout            | expected        |
+      | thisisalongfilenamethathas255charactersthisisalongfilenamethathas255charactersthisisalongfilenamethathas255charactersthisisalongfilenamethathas255charactersthisisalongfilenamethathas255charactersthisisalongfilenamethathas255charactersthisisalongfilena.txt | longout.txt     | longexp.txt     |
+      | has\\ space\\ in.txt                                                                                                                                                                                                                                            | hasspaceout.txt | hasspaceexp.txt |
+      | 1                                                                                                                                                                                                                                                               | 1out.txt        | 1exp.txt        |
+      | spch~\\`\\!\\@#\\$%\\^\\&\\*\\(\\)_+-\\=\\[\\]\\\\\\{\\}\\"\\;\\'\\<\\>\\?\\,.\\:\\".txt                                                                                                                                                                        | spchout.txt     | spchexp.txt     |
+    When we run our CLP ... passed in 0.209s
+    Then we will find fout matches expected ... passed in 0.001s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="filename.File Name Validation" name="CLP does not work when file specified does not exist" status="passed" time="0.173655"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @negative
+  Scenario: CLP does not work when file specified does not exist
+    Given we prepare test data for file name checks ... passed in 0.000s
+    Given a set of specific files is given ... passed in 0.000s
+      | fin            |
+      | filenotpresent |
+      | foldername     |
+      | 1exp.html      |
+      | 1exp           |
+    When we run our CLP an expect error returned ... passed in 0.173s
+    Then we will find CLP returns no such file error ... passed in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="filename.File Name Validation" name="CLP does not work when no filename specified" status="passed" time="0.042598"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @negative
+  Scenario: CLP does not work when no filename specified
+    Given we prepare test data for file name checks ... passed in 0.000s
+    When we try to run our CLP with no filename argument specified ... passed in 0.042s
+    Then we will find CLP returns file not specified error ... passed in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>

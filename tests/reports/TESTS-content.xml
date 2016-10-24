@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuite errors="0" failures="0" name="content.File Content Type Validation" skipped="0" tests="1" time="0.245253"><testcase classname="content.File Content Type Validation" name="CLP works for files each wth content in different languages: eng, russian, chinese" status="passed" time="0.245253"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @positive
+  Scenario: CLP works for files each wth content in different languages: eng, russian, chinese
+    Given we prepare test data for content checks ... passed in 0.000s
+    Given a set of specific files is given ... passed in 0.000s
+      | fin       | fout       | expected   |
+      | rusin.txt | rusout.txt | rusexp.txt |
+      | engin.txt | engout.txt | engexp.txt |
+      | chin.txt  | chout.txt  | chexp.txt  |
+    When we run our CLP ... passed in 0.244s
+    Then we will find fout matches expected ... passed in 0.001s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>

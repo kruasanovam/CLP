@@ -11,9 +11,9 @@ your tests. Groupped based on feature tested
 - Test Scenarios.pdf: simple diagram that outlines all scenarios covered in tests
 
 
-**********************************
-***          USAGE             ***
-**********************************
+************************************************************************************
+***                               USAGE                                          ***
+************************************************************************************
 #to run all feature tests
    behave 
 #to run all positive feature tests
@@ -21,6 +21,13 @@ your tests. Groupped based on feature tested
 #to run all positive feature tests
    behave --tags=negative
 #to run feature tests and save output as 
+   behave -v --junit
 
 
-Pre-requisites:
+************************************************************************************
+***                               PREREQUISITE                                   ***
+************************************************************************************
+#install behave
+   pip install behave
+##or other install options:
+http://pythonhosted.org/behave/install.html
