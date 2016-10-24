@@ -1,5 +1,0 @@
-06/15/15 16:43:00 -processSIGTERM_DA: processing "disk2".
-06/15/15 16:43:00 -processSIGTERM_DA: unmount "disk2" failed (-119930879).
-06/15/15 16:43:00 -processSIGTERM_DA: FORCE unmount "disk2" failed (-119930879).
-06/15/15 16:43:00 -processSIGTERM_DA: eject "disk2" failed (-119930879).
-06/15/15 16:43:00 -processSIGTERM_DA: terminating.
